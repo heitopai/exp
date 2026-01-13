@@ -1,0 +1,71 @@
+本次运行时刻： 2026-01-12 22:09:34
+d:\返修\实验\dataset\dense\1\dense100.txt
+贪心算法求初始有向生成树的权值 5560
+迭代次数： 4
+基于拟阵交算法的DMST的求解时间： 0.11599969863891602
+基于拟阵交算法求DMST的权重和： 5528
+Networkx中基于Edmonds算法的DMST求解时间： 0.07910299301147461
+Edmonds算法求DMST的权重和： 5528
+d:\返修\实验\dataset\dense\1\dense150.txt
+贪心算法求初始有向生成树的权值 5294
+迭代次数： 11
+基于拟阵交算法的DMST的求解时间： 0.8442826271057129
+基于拟阵交算法求DMST的权重和： 5219
+Networkx中基于Edmonds算法的DMST求解时间： 1.1089158058166504
+Edmonds算法求DMST的权重和： 5219
+d:\返修\实验\dataset\dense\1\dense200.txt
+贪心算法求得森林
+迭代次数： 10
+基于拟阵交算法的DMST的求解时间： 1.4121549129486084
+基于拟阵交算法求DMST的权重和： 4962
+Networkx中基于Edmonds算法的DMST求解时间： 0.36923789978027344
+Edmonds算法求DMST的权重和： 4962
+d:\返修\实验\dataset\dense\1\dense250.txt
+贪心算法求得森林
+迭代次数： 7
+基于拟阵交算法的DMST的求解时间： 1.66434907913208
+基于拟阵交算法求DMST的权重和： 4786
+Networkx中基于Edmonds算法的DMST求解时间： 2.6899070739746094
+Edmonds算法求DMST的权重和： 4786
+d:\返修\实验\dataset\dense\1\dense300.txt
+贪心算法求初始有向生成树的权值 4798
+迭代次数： 4
+基于拟阵交算法的DMST的求解时间： 1.4147915840148926
+基于拟阵交算法求DMST的权重和： 4770
+Networkx中基于Edmonds算法的DMST求解时间： 0.512969970703125
+Edmonds算法求DMST的权重和： 4770
+d:\返修\实验\dataset\dense\1\dense350.txt
+贪心算法求得森林
+迭代次数： 18
+基于拟阵交算法的DMST的求解时间： 8.870310544967651
+基于拟阵交算法求DMST的权重和： 4947
+Networkx中基于Edmonds算法的DMST求解时间： 5.0180323123931885
+Edmonds算法求DMST的权重和： 4947
+d:\返修\实验\dataset\dense\1\dense400.txt
+贪心算法求初始有向生成树的权值 5126
+迭代次数： 8
+基于拟阵交算法的DMST的求解时间： 5.6727845668792725
+基于拟阵交算法求DMST的权重和： 5027
+Networkx中基于Edmonds算法的DMST求解时间： 11.442955732345581
+Edmonds算法求DMST的权重和： 5027
+d:\返修\实验\dataset\dense\1\dense450.txt
+贪心算法求初始有向生成树的权值 4775
+迭代次数： 5
+基于拟阵交算法的DMST的求解时间： 4.256542682647705
+基于拟阵交算法求DMST的权重和： 4728
+Networkx中基于Edmonds算法的DMST求解时间： 0.7404587268829346
+Edmonds算法求DMST的权重和： 4728
+d:\返修\实验\dataset\dense\1\dense50.txt
+贪心算法求得森林
+迭代次数： 8
+基于拟阵交算法的DMST的求解时间： 0.053999900817871094
+基于拟阵交算法求DMST的权重和： 4646
+Networkx中基于Edmonds算法的DMST求解时间： 0.02902698516845703
+Edmonds算法求DMST的权重和： 4646
+d:\返修\实验\dataset\dense\1\dense500.txt
+贪心算法求得森林
+迭代次数： 33
+基于拟阵交算法的DMST的求解时间： 37.48029017448425
+基于拟阵交算法求DMST的权重和： 4920
+Networkx中基于Edmonds算法的DMST求解时间： 37.77330207824707
+Edmonds算法求DMST的权重和： 4920

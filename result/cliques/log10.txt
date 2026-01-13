@@ -1,0 +1,71 @@
+本次运行时刻： 2026-01-12 23:26:42
+d:\返修\实验\dataset\cliques\10\clique500_100.txt
+贪心算法求初始有向生成树的权值 37765
+迭代次数： 13
+基于拟阵交算法的DMST的求解时间： 2.169464349746704
+基于拟阵交算法求DMST的权重和： 37487
+Networkx中基于Edmonds算法的DMST求解时间： 3.04421067237854
+Edmonds算法求DMST的权重和： 37487
+d:\返修\实验\dataset\cliques\10\clique500_150.txt
+贪心算法求得森林
+迭代次数： 20
+基于拟阵交算法的DMST的求解时间： 4.6027374267578125
+基于拟阵交算法求DMST的权重和： 30987
+Networkx中基于Edmonds算法的DMST求解时间： 9.26590871810913
+Edmonds算法求DMST的权重和： 30987
+d:\返修\实验\dataset\cliques\10\clique500_200.txt
+贪心算法求得森林
+迭代次数： 19
+基于拟阵交算法的DMST的求解时间： 8.406759023666382
+基于拟阵交算法求DMST的权重和： 29880
+Networkx中基于Edmonds算法的DMST求解时间： 13.363657236099243
+Edmonds算法求DMST的权重和： 29880
+d:\返修\实验\dataset\cliques\10\clique500_250.txt
+贪心算法求初始有向生成树的权值 21459
+迭代次数： 26
+基于拟阵交算法的DMST的求解时间： 18.00732183456421
+基于拟阵交算法求DMST的权重和： 20675
+Networkx中基于Edmonds算法的DMST求解时间： 2.2270054817199707
+Edmonds算法求DMST的权重和： 20675
+d:\返修\实验\dataset\cliques\10\clique500_300.txt
+贪心算法求初始有向生成树的权值 21251
+迭代次数： 13
+基于拟阵交算法的DMST的求解时间： 12.903222560882568
+基于拟阵交算法求DMST的权重和： 20674
+Networkx中基于Edmonds算法的DMST求解时间： 47.99793982505798
+Edmonds算法求DMST的权重和： 20674
+d:\返修\实验\dataset\cliques\10\clique500_350.txt
+贪心算法求初始有向生成树的权值 13911
+迭代次数： 6
+基于拟阵交算法的DMST的求解时间： 7.771862268447876
+基于拟阵交算法求DMST的权重和： 13905
+Networkx中基于Edmonds算法的DMST求解时间： 3.3388309478759766
+Edmonds算法求DMST的权重和： 13905
+d:\返修\实验\dataset\cliques\10\clique500_400.txt
+贪心算法求得森林
+迭代次数： 36
+基于拟阵交算法的DMST的求解时间： 61.02636933326721
+基于拟阵交算法求DMST的权重和： 11064
+Networkx中基于Edmonds算法的DMST求解时间： 93.76982808113098
+Edmonds算法求DMST的权重和： 11064
+d:\返修\实验\dataset\cliques\10\clique500_450.txt
+贪心算法求初始有向生成树的权值 5314
+迭代次数： 19
+基于拟阵交算法的DMST的求解时间： 35.81868553161621
+基于拟阵交算法求DMST的权重和： 5176
+Networkx中基于Edmonds算法的DMST求解时间： 24.026163339614868
+Edmonds算法求DMST的权重和： 5176
+d:\返修\实验\dataset\cliques\10\clique500_50.txt
+贪心算法求得森林
+迭代次数： 18
+基于拟阵交算法的DMST的求解时间： 1.496185302734375
+基于拟阵交算法求DMST的权重和： 41665
+Networkx中基于Edmonds算法的DMST求解时间： 0.26900315284729004
+Edmonds算法求DMST的权重和： 41665
+d:\返修\实验\dataset\cliques\10\clique500_500.txt
+贪心算法求初始有向生成树的权值 817
+迭代次数： 8
+基于拟阵交算法的DMST的求解时间： 28.352307081222534
+基于拟阵交算法求DMST的权重和： 784
+Networkx中基于Edmonds算法的DMST求解时间： 16.31819248199463
+Edmonds算法求DMST的权重和： 784
