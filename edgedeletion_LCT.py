@@ -18,7 +18,8 @@ current_path = os.path.dirname(os.path.abspath(__file__))
 
 # 数据集
 # dataset="dense"
-dataset="sparse"
+# dataset="sparse"
+dataset="cliques"
 
 # 获取该类数据集下的所有数据文件夹
 directory = current_path + "\\dataset\\" + dataset
@@ -78,11 +79,11 @@ for folder in folders:
             tail,head,weight=original_A_list[deleted_edge][0],original_A_list[deleted_edge][1],original_A_list[deleted_edge][2]
             print('删除的边为：', deleted_edge, tail,head,weight)
 
-            T_list_tmp, AG_adj_tmp,A_list_tmp,G_adj_tmp=copy.deepcopy(T_list), copy.deepcopy(AG_adj),copy.deepcopy(A_list),copy.deepcopy(G_adj)
+            T_list_tmp, AG_adj_tmp,A_list_tmp,G_adj_tmp,lc_tree_tmp=copy.deepcopy(T_list), copy.deepcopy(AG_adj),copy.deepcopy(A_list),copy.deepcopy(G_adj),copy.deepcopy(lc_tree)
 
             from Matroid_LCT import EdgeDeletion
             start=time.time()
-            T_list_tmp, AG_adj_tmp,lc_tree=EdgeDeletion(T_list_tmp,AG_adj_tmp,A_list_tmp,G_adj_tmp,num_vertices,deleted_edge, lc_tree)
+            T_list_tmp, AG_adj_tmp,_=EdgeDeletion(T_list_tmp,AG_adj_tmp,A_list_tmp,G_adj_tmp,num_vertices,deleted_edge, lc_tree_tmp)
             end=time.time()
             print("基于拟阵交的动态删除有向边的求解时间：", end-start)
 

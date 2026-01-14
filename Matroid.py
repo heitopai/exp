@@ -267,7 +267,7 @@ def DMST(A_list,G_adj,num_vertices,num_edges,root):
 def EdgeDeletion(T_list,AG_adj,A_list,G_adj,num_vertices,deleted_edge):
     head=A_list[deleted_edge][1]
     if T_list[head]!=deleted_edge:
-        return T_list,AG_adj,A_list
+        return T_list,AG_adj
     else:
         A_list[deleted_edge]=(A_list[deleted_edge][0],head,1000000)
         num_edges=len(A_list)

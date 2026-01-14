@@ -280,7 +280,7 @@ def DMST(A_list,G_adj,num_vertices,num_edges,root):
 def EdgeDeletion(T_list,AG_adj,A_list,G_adj,num_vertices,deleted_edge,lc_tree):
     head=A_list[deleted_edge][1]
     if T_list[head]!=deleted_edge:
-        return T_list,AG_adj,A_list
+        return T_list,AG_adj,lc_tree
     else:
         A_list[deleted_edge]=(A_list[deleted_edge][0],head,1000000)
         num_edges=len(A_list)
@@ -289,7 +289,7 @@ def EdgeDeletion(T_list,AG_adj,A_list,G_adj,num_vertices,deleted_edge,lc_tree):
 
 def EdgeInsertion(T_list,AG_adj,A_list,G_adj,num_vertices,tail,head,weight,lc_tree):
     if T_list[head]==-1:
-        return T_list,AG_adj
+        return T_list,AG_adj,lc_tree
     
     id=len(A_list)
     A_list.append((tail,head,weight))
