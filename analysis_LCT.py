@@ -5,8 +5,9 @@ import os
 current_path = os.path.dirname(os.path.abspath(__file__))
 
 # 数据集
-# dataset="dense"
-dataset="sparse"
+dataset="dense"
+# dataset="sparse"
+# dataset="cliques"
 
 # 获取该类数据集下的所有数据文件夹
 directory = current_path + '\\result_LCT\\'  + dataset
@@ -18,7 +19,7 @@ for file in all_files:
     # 定义正则表达式模式
     patterns = {
         "timestamp": re.compile(r"本次运行时刻： (\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})"),
-        "vertices": re.compile(rf"{dataset}(\d+)\.txt"),
+        "vertices": re.compile(rf'clique\d+_(\d+)|{dataset}(\d+)\.txt'),
         "greedy": re.compile(r"贪心算法求初始有向生成树的权值 (\d+)"),
         "iterations": re.compile(r"迭代次数： (\d+)"),
         "matroid_time": re.compile(r"基于拟阵交算法的DMST的求解时间： ([\d\.]+)"),
@@ -45,7 +46,10 @@ for file in all_files:
                 elif key=="vertices":
                     with open(line,'r') as f:
                         num_vertices,num_edges,root=map(int,f.readline().strip().split())
-                        current_data[key]=num_vertices
+                        if dataset == "cliques":
+                            current_data[key]=match.group(1)
+                        else:
+                            current_data[key]=num_vertices
                         current_data["edges"]=num_edges
                 else:
                     current_data[key]=match.group(1)
@@ -55,7 +59,7 @@ for file in all_files:
             current_data = {}
     results.append(current_run)
 
-
+    # print(results)
     print(len(results))
 
     # 将结果转换为DataFrame
@@ -91,19 +95,19 @@ for file in all_files:
     df_save.to_csv(path+".csv", index=False)
 
 
-    import matplotlib.pyplot as plt
+    # import matplotlib.pyplot as plt
 
-    plt.figure()
+    # plt.figure()
 
-    # 绘制两组数据的散点图
-    plt.scatter(df_save["vertices"], df_save["avg_matroid_time"], color='blue', label="avg_matroid_time")  # 第一组数据，蓝色
-    plt.scatter(df_save["vertices"], df_save["avg_edmonds_time"], color='red', label="avg_edmonds_time")   # 第二组数据，红色
+    # # 绘制两组数据的散点图
+    # plt.scatter(df_save["vertices"], df_save["avg_matroid_time"], color='blue', label="avg_matroid_time")  # 第一组数据，蓝色
+    # plt.scatter(df_save["vertices"], df_save["avg_edmonds_time"], color='red', label="avg_edmonds_time")   # 第二组数据，红色
 
-    # 设置标签和标题
-    plt.xlabel("vertices")
-    plt.ylabel("time (sec)")
-    # plt.title('Comparison of Two Groups')
-    plt.legend()  # 显示图例
+    # # 设置标签和标题
+    # plt.xlabel("vertices")
+    # plt.ylabel("time (sec)")
+    # # plt.title('Comparison of Two Groups')
+    # plt.legend()  # 显示图例
 
-    plt.savefig(path+".png")
+    # plt.savefig(path+".png")
 
