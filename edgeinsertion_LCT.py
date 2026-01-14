@@ -17,8 +17,9 @@ import os
 current_path = os.path.dirname(os.path.abspath(__file__))
 
 # 数据集
-dataset="dense"
+# dataset="dense"
 # dataset="sparse"
+dataset="cliques"
 
 # 获取该类数据集下的所有数据文件夹
 directory = current_path + "\\dataset\\" + dataset
@@ -29,8 +30,8 @@ for folder in folders:
 
     import sys
     # 将标准输出重定向到文件
-    os.makedirs(current_path + '\\insertion_result\\'  + dataset, exist_ok=True)
-    sys.stdout = open(current_path + '\\insertion_result\\'  + dataset + '\\log' + folder + '.txt', 'w', encoding='utf-8')
+    os.makedirs(current_path + '\\insertion_result_LCT\\'  + dataset, exist_ok=True)
+    sys.stdout = open(current_path + '\\insertion_result_LCT\\'  + dataset + '\\log' + folder + '.txt', 'w', encoding='utf-8')
 
     from datetime import datetime
     print('本次运行时刻：',datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
@@ -81,7 +82,7 @@ for folder in folders:
             
             from Matroid_LCT import EdgeInsertion
             start=time.time()
-            T_list_tmp, AG_adj_tmp,lc_tree=EdgeInsertion(T_list_tmp,AG_adj_tmp,A_list_tmp,G_adj_tmp,num_vertices,tail,head,weight,lc_tree)
+            T_list_tmp, AG_adj_tmp, _=EdgeInsertion(T_list_tmp,AG_adj_tmp,A_list_tmp,G_adj_tmp,num_vertices,tail,head,weight,lc_tree_tmp)
             end=time.time()
             print("基于拟阵交的动态插入有向边的求解时间：", end-start)
             print("基于拟阵交的动态插入有向边更新DMST后的权重和：",sum([A_list_tmp[T_list_tmp[v]][2] for v in range(num_vertices) if v!=root]))

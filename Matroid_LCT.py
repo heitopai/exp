@@ -319,6 +319,6 @@ def EdgeInsertion(T_list,AG_adj,A_list,G_adj,num_vertices,tail,head,weight,lc_tr
     for id in range(num_edges):
         AG_adj[s].append(id)
     
-    return Update(A_list,G_adj,num_vertices,num_edges,T_list,AG_adj,s)
+    return Update(A_list,G_adj,num_vertices,num_edges,T_list,AG_adj,s,lc_tree)
 
 
