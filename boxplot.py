@@ -3,7 +3,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import os 
 
-folder = "result\\sparse"
+# folder = "result\\sparse"
+folder = "result_LCT\\sparse"
 
 files = [
     os.path.join(folder, f)

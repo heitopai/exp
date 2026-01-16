@@ -17,8 +17,10 @@ import os
 current_path = os.path.dirname(os.path.abspath(__file__))
 
 # 数据集
-dataset="dense"
+# dataset="dense"
 # dataset="sparse"
+dataset="cliques"
+
 
 # 获取该类数据集下的所有数据文件夹
 directory = current_path + "\\dataset\\" + dataset

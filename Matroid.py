@@ -274,9 +274,9 @@ def EdgeDeletion(T_list,AG_adj,A_list,G_adj,num_vertices,deleted_edge):
         s=num_edges
         return Update(A_list,G_adj,num_vertices,num_edges,T_list,AG_adj,s)
 
-def EdgeInsertion(T_list,AG_adj,A_list,G_adj,num_vertices,tail,head,weight,lc_tree):
+def EdgeInsertion(T_list,AG_adj,A_list,G_adj,num_vertices,tail,head,weight):
     if T_list[head]==-1:
-        return T_list,AG_adj,lc_tree
+        return T_list,AG_adj
     
     id=len(A_list)
     A_list.append((tail,head,weight))
@@ -305,6 +305,6 @@ def EdgeInsertion(T_list,AG_adj,A_list,G_adj,num_vertices,tail,head,weight,lc_tr
     for id in range(num_edges):
         AG_adj[s].append(id)
     
-    return Update(A_list,G_adj,num_vertices,num_edges,T_list,AG_adj,s,lc_tree)
+    return Update(A_list,G_adj,num_vertices,num_edges,T_list,AG_adj,s)
 
 

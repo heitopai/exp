@@ -6,7 +6,8 @@ current_path = os.path.dirname(os.path.abspath(__file__))
 
 # 数据集
 # dataset="dense"
-dataset="sparse"
+# dataset="sparse"
+dataset="cliques"
 
 # 获取该类数据集下的所有数据文件夹
 directory = current_path + '\\result\\'  + dataset
@@ -18,7 +19,7 @@ for file in all_files:
     # 定义正则表达式模式
     patterns = {
         "timestamp": re.compile(r"本次运行时刻： (\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})"),
-        "vertices": re.compile(rf"{dataset}(\d+)\.txt"),
+        "vertices": re.compile(rf'clique\d+_(\d+)|{dataset}(\d+)\.txt'),
         "greedy": re.compile(r"贪心算法求初始有向生成树的权值 (\d+)"),
         "iterations": re.compile(r"迭代次数： (\d+)"),
         "matroid_time": re.compile(r"基于拟阵交算法的DMST的求解时间： ([\d\.]+)"),
@@ -45,7 +46,10 @@ for file in all_files:
                 elif key=="vertices":
                     with open(line,'r') as f:
                         num_vertices,num_edges,root=map(int,f.readline().strip().split())
-                        current_data[key]=num_vertices
+                        if dataset == "cliques":
+                            current_data[key]=match.group(1)
+                        else:
+                            current_data[key]=num_vertices
                         current_data["edges"]=num_edges
                 else:
                     current_data[key]=match.group(1)
