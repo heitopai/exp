@@ -3,11 +3,11 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import os 
 
-# dataset = "sparse"
+dataset = "sparse"
 # dataset = "dense"
-dataset = "cliques"
+# dataset = "cliques"
 
-folder = f"result\\{dataset}"
+folder = f"insertion_result\\{dataset}"
 
 files = [
     os.path.join(folder, f)
@@ -15,7 +15,7 @@ files = [
     if f.endswith(".csv")
 ]
 
-folder1 = f"result_LCT\\{dataset}"
+folder1 = f"insertion_result_LCT\\{dataset}"
 
 files1 = [
     os.path.join(folder1, f)
@@ -35,17 +35,17 @@ df1 = pd.concat(
     ignore_index=True
 )
 
-df1.rename(columns={'avg_matroid_time': 'matroid_LCT_time'}, inplace=True)
+df1.rename(columns={'avg_re_matroid_time': 're_matroid_LCT_time', 'avg_dynamic_time': 'dynamic_LCT_time'}, inplace=True)
 
-df = pd.concat([df, df1['matroid_LCT_time']], axis=1)
+df = pd.concat([df, df1['re_matroid_LCT_time'], df1['dynamic_LCT_time']], axis=1)
 
-df.rename(columns={'avg_matroid_time': 'matroid_time', 'avg_edmonds_time': 'edmonds_time'}, inplace=True)
+df.rename(columns={'avg_dynamic_time': 'dynamic_time', 'avg_re_edmonds_time': 're_edmonds_time', 'avg_re_matroid_time': 're_matroid_time'}, inplace=True)
 
 print(df)
 
 
 df_melted = df.melt(
-    value_vars=["edmonds_time", "matroid_time", "matroid_LCT_time"],
+    value_vars=["dynamic_time" , "dynamic_LCT_time" ,"re_edmonds_time", "re_matroid_LCT_time", 're_matroid_time'],
     var_name="Algorithm",
     value_name="Time"
 )
@@ -63,7 +63,7 @@ plt.xlabel("")
 plt.grid(True, axis="y", linestyle='--')
 
 
-os.makedirs("figures\\static", exist_ok=True)
-plt.savefig(f"figures\\static\\{dataset}.pdf")
+os.makedirs("figures\\insertion", exist_ok=True)
+plt.savefig(f"figures\\insertion\\{dataset}.pdf")
 
 plt.show()
