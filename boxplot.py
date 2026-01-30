@@ -3,9 +3,17 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import os 
 
-# dataset = "sparse"
+plt.rcParams.update({
+    'font.size': 14,
+    'axes.labelsize': 16,
+    'xtick.labelsize': 14,
+    'ytick.labelsize': 14,
+    'legend.fontsize': 14
+})
+
+dataset = "sparse"
 # dataset = "dense"
-dataset = "cliques"
+# dataset = "cliques"
 
 folder = f"result\\{dataset}"
 
@@ -45,7 +53,7 @@ print(df)
 
 
 df_melted = df.melt(
-    value_vars=["edmonds_time", "matroid_time", "matroid_LCT_time"],
+    value_vars=["edmonds_time", "matroid_time"],
     var_name="Algorithm",
     value_name="Time"
 )
@@ -63,7 +71,7 @@ plt.xlabel("")
 plt.grid(True, axis="y", linestyle='--')
 
 
-os.makedirs("figures\\static", exist_ok=True)
-plt.savefig(f"figures\\static\\{dataset}.pdf")
+os.makedirs("figures1\\static", exist_ok=True)
+plt.savefig(f"figures1\\static\\{dataset}.pdf")
 
 plt.show()

@@ -6,8 +6,8 @@ current_path = os.path.dirname(os.path.abspath(__file__))
 
 # 数据集
 # dataset="dense"
-# dataset="sparse"
-dataset="cliques"
+dataset="sparse"
+# dataset="cliques"
 
 # 获取该类数据集下的所有数据文件夹
 directory = current_path + '\\result\\'  + dataset
@@ -95,19 +95,25 @@ for file in all_files:
     df_save.to_csv(path+".csv", index=False)
 
 
-    import matplotlib.pyplot as plt
 
-    plt.figure()
+import matplotlib.pyplot as plt
 
-    # 绘制两组数据的散点图
-    plt.scatter(df_save["vertices"], df_save["avg_matroid_time"], color='blue', label="avg_matroid_time")  # 第一组数据，蓝色
-    plt.scatter(df_save["vertices"], df_save["avg_edmonds_time"], color='red', label="avg_edmonds_time")   # 第二组数据，红色
+plt.rcParams.update({
+    'font.size': 14,
+    'axes.labelsize': 16,
+    'xtick.labelsize': 14,
+    'ytick.labelsize': 14,
+    'legend.fontsize': 14
+})
+plt.figure()
 
-    # 设置标签和标题
-    plt.xlabel("vertices")
-    plt.ylabel("time (sec)")
-    # plt.title('Comparison of Two Groups')
-    plt.legend()  # 显示图例
+plt.plot(df_save["vertices"], df_save["avg_matroid_time"], 'o-', label="Matroid", color='k')  
+plt.plot(df_save["vertices"], df_save["avg_edmonds_time"], '^:', label="Edmonds", color='k')  
 
-    plt.savefig(path+".png")
+plt.xlabel("vertices")
+plt.ylabel("time (sec)")
+# plt.title('Comparison of Two Groups')
+plt.legend() 
+
+plt.savefig(path+".png")
 
